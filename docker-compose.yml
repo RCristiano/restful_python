@@ -1,0 +1,6 @@
+python:
+  build: .
+  user: 1000:1000
+  volumes:
+    - ./code:/code
+  restart: always
