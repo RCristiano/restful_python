@@ -1,6 +1,16 @@
-python:
-  build: .
-  user: 1000:1000
-  volumes:
-    - ./code:/code
-  restart: always
+version: '2'
+services:
+  flask:
+    build: .
+    ports:
+        - 5000:5000
+    #restart: on_failure
+
+  python:
+    image: python
+    command: ['/bin/bash']
+
+networks:
+  default:
+    external:
+      name: net
