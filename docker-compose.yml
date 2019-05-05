@@ -2,15 +2,10 @@ version: '2'
 services:
   flask:
     build: .
+    environment:
+      - FLASK_APP=code/server.py
+      - FLASK_ENV=development
     ports:
         - 5000:5000
-    #restart: on_failure
-
-  python:
-    image: python
-    command: ['/bin/bash']
-
-networks:
-  default:
-    external:
-      name: net
+    command: [ "flask", "run", "--host=0.0.0.0"]
+    restart: on-failure

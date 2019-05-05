@@ -8,4 +8,4 @@ COPY code /code/
 
 EXPOSE 5000
 
-ENTRYPOINT ["python", "/code/server.py"]
+# ENTRYPOINT ["python", "/code/server.py"]
